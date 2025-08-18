@@ -1,0 +1,72 @@
+# Unreal Engine 项目 .gitattributes 文件
+
+# 文本文件
+*.cpp text eol=crlf
+*.h text eol=crlf
+*.cs text eol=crlf
+*.ini text eol=crlf
+*.txt text eol=crlf
+*.md text eol=crlf
+*.json text eol=crlf
+*.xml text eol=crlf
+*.uproject text eol=crlf
+*.uplugin text eol=crlf
+*.target text eol=crlf
+*.build text eol=crlf
+
+# 二进制文件
+*.uasset binary
+*.umap binary
+*.ubulk binary
+*.uexp binary
+*.pak binary
+*.ucas binary
+*.utoc binary
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.obj binary
+*.o binary
+*.so binary
+*.dylib binary
+*.app binary
+*.ipa binary
+*.apk binary
+*.aab binary
+
+# 图像文件
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.bmp binary
+*.tga binary
+*.hdr binary
+*.exr binary
+*.ico binary
+
+# 音频文件
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.flac binary
+*.aac binary
+
+# 视频文件
+*.mp4 binary
+*.avi binary
+*.mov binary
+*.wmv binary
+*.flv binary
+
+# 压缩文件
+*.zip binary
+*.rar binary
+*.7z binary
+*.tar binary
+*.gz binary
+
+# 其他二进制文件
+*.bin binary
+*.dat binary
+*.cache binary

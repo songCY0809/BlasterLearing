@@ -1,0 +1,146 @@
+# Unreal Engine 项目 .gitignore 文件
+
+# 编译输出
+/Binaries/
+/Intermediate/
+/Build/
+/DerivedDataCache/
+
+# 本地配置文件
+/Saved/
+/LocalBuilds/
+
+# 编辑器临时文件
+*.VC.db
+*.opensdf
+*.opendb
+*.VC.opendb
+
+# Visual Studio 文件
+.vs/
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 其他临时文件
+*.tmp
+*.temp
+*.log
+*.tlog
+*.lastbuildstate
+
+# 平台特定文件
+*.app
+*.ipa
+*.apk
+*.aab
+
+# 包文件
+*.pak
+*.ucas
+*.utoc
+
+# 着色器缓存
+/ShaderDebugInfo/
+/Shaders/
+
+# 崩溃报告
+/Saved/Crashes/
+
+# 自动保存
+/Saved/Autosaves/
+
+# 材质统计
+/Saved/MaterialStats/
+/Saved/MaterialStatsDebug/
+
+# 世界状态
+/Saved/WorldState/
+
+# 临时文件
+/Saved/Temp/
+
+# 分阶段构建
+/Saved/StagedBuilds/
+
+# 烹饪输出
+/Saved/Cooked/
+
+# 外部对象缓存
+/Content/__ExternalObjects__/
+/Content/__ExternalActors__/
+
+# 插件编译输出（但保留源代码和内容）
+/Plugins/*/Binaries/
+/Plugins/*/Intermediate/
+# 注意：插件的源代码和内容文件会被包含在版本控制中
+
+# 其他
+*.generated.h
+*.generated.cpp
+
+# 引擎特定文件
+*.uasset.meta
+*.umap.meta
+*.uplugin.meta
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE 和编辑器文件
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 备份文件
+*.bak
+*.backup
+*_backup.*
+
+# 调试文件
+*.pdb
+*.ilk
+*.exp
+*.map
+
+# 预编译头文件
+*.pch
+*.gch
+
+# 链接器文件
+*.lib
+*.a
+*.so
+*.dylib
+
+# 其他编译产物
+*.obj
+*.o
+*.exe
+*.dll
+
+# 网络相关
+*.url
+
+# 临时文件夹
+Temp/
+Temporary/
+
+# 引擎配置文件（本地修改）
+Config/DefaultEngine.ini
+Config/DefaultGame.ini
+Config/DefaultInput.ini
+Config/DefaultGameUserSettings.ini
+
+# 但保留默认配置模板
+!Config/DefaultEngine.ini.template
+!Config/DefaultGame.ini.template
+!Config/DefaultInput.ini.template
