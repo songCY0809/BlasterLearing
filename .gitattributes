@@ -1,5 +1,4 @@
 # Unreal Engine 项目 .gitattributes 文件
-
 # 文本文件
 *.cpp text eol=crlf
 *.h text eol=crlf
@@ -13,15 +12,14 @@
 *.uplugin text eol=crlf
 *.target text eol=crlf
 *.build text eol=crlf
-
 # 二进制文件
-*.uasset binary
-*.umap binary
-*.ubulk binary
-*.uexp binary
-*.pak binary
-*.ucas binary
-*.utoc binary
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.ubulk filter=lfs diff=lfs merge=lfs -text
+*.uexp filter=lfs diff=lfs merge=lfs -text
+*.pak filter=lfs diff=lfs merge=lfs -text
+*.ucas filter=lfs diff=lfs merge=lfs -text
+*.utoc filter=lfs diff=lfs merge=lfs -text
 *.exe binary
 *.dll binary
 *.lib binary
@@ -34,7 +32,6 @@
 *.ipa binary
 *.apk binary
 *.aab binary
-
 # 图像文件
 *.png binary
 *.jpg binary
@@ -44,28 +41,24 @@
 *.hdr binary
 *.exr binary
 *.ico binary
-
 # 音频文件
 *.wav binary
 *.mp3 binary
 *.ogg binary
 *.flac binary
 *.aac binary
-
 # 视频文件
 *.mp4 binary
 *.avi binary
 *.mov binary
 *.wmv binary
 *.flv binary
-
 # 压缩文件
 *.zip binary
 *.rar binary
 *.7z binary
 *.tar binary
 *.gz binary
-
 # 其他二进制文件
 *.bin binary
 *.dat binary
