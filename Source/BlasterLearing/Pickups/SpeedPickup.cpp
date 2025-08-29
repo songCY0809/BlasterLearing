@@ -1,0 +1,19 @@
+#include "SpeedPickup.h"
+#include "BlasterLearing/Character/BlasterCharacter.h"
+#include "BlasterLearing/BlasterComponent/BufferComponent.h"
+
+void ASpeedPickup::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	Super::OnSphereOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+
+	ABlasterCharacter* BlasterCharacter = Cast<ABlasterCharacter>(OtherActor);
+	if (BlasterCharacter)
+	{
+		UBufferComponent* Buff = BlasterCharacter->GetBuff();
+		if (Buff)
+		{
+			Buff->BuffSpeed(BaseSpeedBuff, CrouchSpeedBuff, SpeedBuffTime);
+		}
+	}
+	Destroy();
+}

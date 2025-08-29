@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MultiplayerSessionsSubsystem.h"
 #include "OnlineSubsystem.h"
 #include "OnlineSessionSettings.h"
@@ -38,7 +35,6 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPubilcConnections, FS
 
 		DestorySession();
 	}
-	//�洢ί�к�FDelegateHandle,�Ա����ǿ����Ժ��ί���б���ɾ��
 	CreateSessionCompleteDelegateHandle = SessionInterface->AddOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegate);
 
 	LastSessionSettings = MakeShareable(new FOnlineSessionSettings());
@@ -56,8 +52,8 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPubilcConnections, FS
 	if (!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
 	{
 		SessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
-		
-		
+
+
 		MultiplayerOnCreateSessionComplete.Broadcast(false);
 	}
 }
@@ -112,7 +108,7 @@ void UMultiplayerSessionsSubsystem::DestorySession()
 		return;
 	}
 
-	DestorySessionCompleteDelegateHandle =  SessionInterface->AddOnDestroySessionCompleteDelegate_Handle(DestorySessionCompleteDelegate);
+	DestorySessionCompleteDelegateHandle = SessionInterface->AddOnDestroySessionCompleteDelegate_Handle(DestorySessionCompleteDelegate);
 
 	if (!SessionInterface->DestroySession(NAME_GameSession))
 	{

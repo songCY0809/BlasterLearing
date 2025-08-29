@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -7,9 +5,6 @@
 #include "Interfaces/OnlineSessionInterface.h"
 #include "Menu.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class MULTIPLAYERSESSIONS_API UMenu : public UUserWidget
 {
@@ -53,9 +48,9 @@ private:
 	class UMultiplayerSessionsSubsystem* MultiplayerSessionsSubsystem;
 
 	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	int32 NumPublicConnections{4};
+	int32 NumPublicConnections{ 4 };
 
 	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-	FString MatchType{TEXT("FreeForAll")};
-	FString PathToLobby{TEXT("")};
+	FString MatchType{ TEXT("FreeForAll") };
+	FString PathToLobby{ TEXT("") };
 };
