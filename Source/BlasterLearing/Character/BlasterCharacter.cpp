@@ -387,6 +387,26 @@ void ABlasterCharacter::MulticastLostTheLead_Implementation()
 	}
 }
 
+void ABlasterCharacter::SetTeamColor(ETeam Team)
+{
+	if (GetMesh() == nullptr || OriginalMaterial == nullptr)return;
+	switch (Team)
+	{
+	case ETeam::ET_NoTeam:
+		GetMesh()->SetMaterial(0, OriginalMaterial);
+		DissolveMaterialInstance = BlueDissolveMathInst;
+		break;
+	case ETeam::ET_BlueTeam:
+		GetMesh()->SetMaterial(0, BlueMaterial);
+		DissolveMaterialInstance = BlueDissolveMathInst;
+		break;
+	case ETeam::ET_RedTeam:
+		GetMesh()->SetMaterial(0, RedMaterial);
+		DissolveMaterialInstance = RedDissolveMathInst;
+		break;
+	}
+}
+
 void ABlasterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
@@ -1091,23 +1111,21 @@ bool ABlasterCharacter::IsLocallyReloading()
 	return Combat->bLocallyReloading;
 }
 
-//
-
-void ABlasterCharacter::SetTeamColor(ETeam Team)
-{
-
-}
-
 ETeam ABlasterCharacter::GetTeam()
 {
-	return ETeam();
+	BlasterPlayerState = BlasterPlayerState == nullptr ? GetPlayerState<ABlasterPlayerState>() : BlasterPlayerState;
+	if (BlasterPlayerState == nullptr) return ETeam::ET_NoTeam;
+	return BlasterPlayerState->GetTeam();
 }
+
 bool ABlasterCharacter::IsHoldingTheFlag() const
 {
-	return false;
+	if (Combat == nullptr) return false;
+	return Combat->bHoldingTheFlag;
 }
 
 void ABlasterCharacter::SetHoldingTheFlag(bool bHolding)
 {
-	return;
+	if (Combat == nullptr) return;
+	Combat->bHoldingTheFlag = bHolding;
 }
